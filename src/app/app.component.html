@@ -1,1 +1,10 @@
-<app-hello></app-hello>
+<div *ngFor="let i of user; index as idx; count as total;first as one">
+    <span *ngIf="one">{{i.id}} - {{i.name}} - {{i.age}}</span>
+    <br>
+    ({{idx}}) / ({{total}}) : {{i.id}} - {{i.name}} - {{i.age}}
+</div>
+<button (click)="isDangger=!isDangger">click</button>
+<br>
+<button (click)="isWanrning=!isWanrning">click</button>
+
+<div class="box" [class.red-border]="isDangger" [class.yellow-bg]="isWanrning"></div>

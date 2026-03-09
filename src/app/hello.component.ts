@@ -1,9 +1,26 @@
-import { Component } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-hello',
-    template:`<h2>Hello Word!</h2>`,
+  selector: 'hello',
+  template: `<h1>Hello{{ name }} !</h1>`,
+  styles: [
+    `
+      h1 {
+        font-family: 'Times New Roman', Times, serif;
+      }
+    `,
+  ],
 })
-export class HelloComponent{
+export class HelloComponent {
+  @Input() name: string = '';
 
+
+
+  ngOnInit() {
+    console.log('hello init');
+  }
+
+  ngOnDestroy() {
+    console.log('hello destroy');
+  }
 }
